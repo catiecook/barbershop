@@ -1,4 +1,4 @@
-<md-content layout-padding>
+<md-content ng-controller="MainController" layout-padding>
 
   <div class="content" ng-show="start">
 
@@ -18,7 +18,7 @@
   <div class="content" ng-show="end">
 
     <h3 id="element2">Bummer! See ya next time </h3>
-    <img src"#" alt="face-palm">
+    <img src={{tempGif}} alt="face-palm">
     <p> Unless you want to play again...? </p>
 
     <form ng-submit="start(end)">
@@ -52,8 +52,8 @@
   <div class="content" ng-show="conditionals.puppy">
 
     <h3 id="element4">You chose to pet the puppy</h3>
-      <img src="https://media0.giphy.com/media/l0ExgXKTnGmit9wMo/giphy-downsized.gif" alt="story image">
-      <!-- getGif function returns IMG url {{gifUrl}} -->
+      <img ng-src="{{tempGif}}" alt="story image">
+
       <p>The puppy looks to be alone, and is super fluffy. What do you do?</p>
       <p>KEEP him, or LEAVE him where he is and continue on.</p>
     <form ng-submit="getGif(choice)">
@@ -69,10 +69,9 @@
   <div class="content" ng-show="conditionals.boulder">
 
     <h3 id="element5">You chose to climb the boulder</h3>
-      <img src="#" alt="story image">
-      <!-- getGif function returns IMG url {{gifUrl}} -->
-      <p>Wow! That was a sketchy climb...Cool view though! It looks like there's a river across the field to the east. However, you're feeling a little hungry and you've got a snack in your bag.</p>
-      <p>Do you want to go check out that EAST, or EAT your snack now? Keep in mind you may be on this adventure for a while...</p>
+      <img src={{tempGif}} alt="story image">
+        <p>Wow! That was a sketchy climb...Cool view though! It looks like there's a river across the field to the east. However, you're feeling a little hungry and you've got a snack in your bag.</p>
+      <p>Do you want to go check out that river to the EAST, or EAT your snack now? Keep in mind you may be on this adventure for a while...</p>
     <form ng-submit="getGif(choice)">
       <input type="text"
              ng-model="choice"
@@ -86,10 +85,9 @@
   <div class="content" ng-show="conditionals.tree">
 
     <h3 id="element6">You chose to make a walking stick</h3>
-      <img src="#" alt="story image">
-      <!-- getGif function returns IMG url {{gifUrl}} -->
-      <p>...Someone's adventurous!</p>
-      <p>After you make a proper walking stick, you wak around the boulder and start to hear sounds indicating there's a river nearby. Probably a mile to the east. Earlier, you also heard that there's also a cave the same distance to the west.</p>
+      <img src={{tempGif}} alt="story image">
+        <p>...Someone's adventurous!</p>
+      <p>After you make a proper walking stick, you wander around and start to hear sounds indicating that there's a river nearby. Probably a mile to the east. Earlier, you also heard that there's also a cave the same distance to the west.</p>
       <p> Do you walk EAST to the river, or WEST to the cave?</p>
     <form ng-submit="getGif(choice)">
       <input type="text"
@@ -99,17 +97,16 @@
       </input>
     </form>
   </div>
-</md-content>
 
 <!-- Puppy Run-->
 <div class="content" ng-show="conditionals.keep">
+
 
   <h3 id="element7"> Looks like you have a new hiking buddy!
     <em> +10 pts </em>
   </h3>
     <img src="{{tempGif}}"
          alt="story image">
-    <!-- getGif function returns IMG url {{gifUrl}} -->
     <p>The puppy randomly starts running to the west.</p>
     <p>Do you follow him, WEST, or do you let him run FREE?</p>
   <form ng-submit="getGif(choice)">
@@ -147,7 +144,6 @@
   </h3>
     <img src="{{tempGif}}"
          alt="story image">
-    <!-- getGif function returns IMG url {{gifUrl}} -->
   <p>You see a shiny thing in the way back of the cave, by the wall. You also see, closer to you, is a lunch box. And you are quite hungry.</p>
   <p>Do you go deeper into the cave to go check out this SHINY object, or do you EAT what's in the lunch box?</p>
   <form ng-submit="getGif(choice)">
@@ -160,14 +156,13 @@
 </div>
 
 <!-- East-->
-<div class="content" ng-show="conditionals.east">
+<div class="content" ng-show="conditionals.river">
 
   <h3 id="element7"> You made it to the river! </h3>
     <em> +5 pts </em>
   </h3>
     <img src="{{tempGif}}"
          alt="story image">
-    <!-- getGif function returns IMG url {{gifUrl}} -->
   <p>The sun is out and its quite nice here.</p>
   <p>Should you STAY a while, or go WEST and check out the cave you heard of earlier instead?</p>
 
@@ -181,14 +176,13 @@
 </div>
 
 <!-- Shiny -->
-<div class="content" ng-show="conditionals.keep">
+<div class="content" ng-show="conditionals.shiny">
 
   <h3 id="element7"> Woo!! Its a old and important looking key! </h3>
     <em> +30 pts </em>
   </h3>
     <img src="{{tempGif}}"
          alt="story image">
-    <!-- getGif function returns IMG url {{gifUrl}} -->
   <p>You have the puppy smell the key, and then pocket it for safe keeping.</p>
   <p>The puppy leads you out of the cave and towards the river.</p>
   <p>The river is a mile away, do you continue east towards it, or do you go EAST towards town to post on CRAIGSLIST list to see if anyone is missing a key?</p>
@@ -208,7 +202,6 @@
   </h3>
     <img src="{{tempGif}}"
          alt="story image">
-    <!-- getGif function returns IMG url {{gifUrl}} -->
   <p>You've finised the adventure.</p>
   <p>Play again?</p>
   <form ng-submit="getGif(choice)">
@@ -227,9 +220,8 @@
   <h3 id="element7"> You chose to snack! </h3>
     <em> +10 pts </em>
   </h3>
-    <img src="{{tempGif}}"
+    <img ng-src="{{tempGif}}"
          alt="story image">
-    <!-- getGif function returns IMG url {{gifUrl}} -->
   <p>Snacks are delicious, but you ate too much, and now need to nap.</p>
   <p>You adventure is finished.</p>
   <p>Play again?</p>
@@ -242,3 +234,5 @@
     </input>
   </form>
 </div>
+
+</md-content>
