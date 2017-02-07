@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+body {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+md-content {
+  background-color: black;
+  color: white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}

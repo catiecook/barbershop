@@ -1,0 +1,86 @@
+<md-content layout-padding>
+
+  <div class="content" ng-show="start">
+
+    <h3 id="element">Welcome to Giff-venture!</h3>
+    <p> Ready to play? </p>
+
+    <form ng-submit="start(ans)">
+      <input type="text" ng-model="ans" name="answer" placeholder="Yes/No...">
+      </input>
+    </form>
+
+  </div>
+
+  <div class="content" ng-show="end">
+
+    <h3 id="element2">Bummer! See ya next time </p>
+    <p> Unless you want to play again...? </p>
+
+    <form ng-submit="start(ending)">
+      <input type="text" ng-model="end" name="ending" placeholder="Yes/No...">
+      </input>
+    </form>
+
+  </div>
+
+  <!-- first phase -->
+  <div class="content" ng-show="first">
+
+    <h3 id="element3">You standing under a tree. Before you is a giant boulder and to the left is a puppy.</p>
+      <p>You have three options, pet the PUPPY, climb the BOULDER, or make a walking stick from a branch on the TREE.</p>
+      <!-- katy perry walking stick -->
+      <!-- climb seinfeld hulu -->
+
+    <form ng-submit="start(fst_choice)">
+      <input type="text" ng-model="first_choice" name="fst_choice" placeholder="Boulder/Puppy/Tree">
+      </input>
+    </form>
+  </div>
+
+  <!-- Puppy -->
+  <div class="content" ng-show="puppy">
+
+    <h3 id="element4">You chose to pet the puppy</p>
+      <img src="#">
+      <!-- getGif function returns IMG url {{gifUrl}} -->
+      <p>It seems like the puppy is alone, doesn't have any tags. What do you do?</p>
+      <p>KEEP him, LEAVE him where he is, someone is probably comnig to get him soon.</p>
+    <form ng-submit="getGif(fst_choice)">
+      <input type="text" ng-model="first_choice" name="fst_choice" placeholder="Keep/Leave">
+      </input>
+    </form>
+  </div>
+
+  <!-- Boulder -->
+  <div class="content" ng-show="boulder">
+
+    <h3 id="element5">You chose to climb Boulder</p>
+      <img src="#">
+      <!-- getGif function returns IMG url {{gifUrl}} -->
+      <p>Wow! That was a sketchy climb...Cool view though! It looks like there's a river across the field. However, you're feeling a little hungry and you've got a snack in your bag.</p>
+      <p>Do you want to go check out that RIVER, or EAT your snack now? Keep in mind you may be on this adventure for a while...</p>
+    <form ng-submit="getGif(fst_choice)">
+      <input type="text" ng-model="first_choice" name="fst_choice" placeholder="RIVER/EAT">
+      </input>
+    </form>
+  </div>
+
+  <!-- Tree -->
+  <div class="content" ng-show="tree">
+
+    <h3 id="element6">You chose to make a walking stick</p>
+      <img src="#">
+      <!-- getGif function returns IMG url {{gifUrl}} -->
+      <p>...Someone's adventurous!</p>
+      <p>After you made a proper walking stick, you wak around the boulder and start to hear sounds indicating there's a river nearby. Probably a couple miles to the east. Earlier, you also heard that there's also a cave only a mile to the west.</p>
+      <p> Do you walk the extra mile (literally) EAST to the river, or walk WEST to the cave?</p>
+    <form ng-submit="getGif(fst_choice)">
+      <input type="text" ng-model="first_choice" name="fst_choice" placeholder="RIVER/EAT">
+      </input>
+    </form>
+  </div>
+
+
+
+</md-content>
