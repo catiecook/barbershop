@@ -1,22 +1,103 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
 body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   font-family: 'Inconsolata', monospace;
   font-weight: 300;
-  color: white;
   background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: white;
+  margin: 0 auto;
 }
 
-md-content {
+input {
   background-color: black;
   color: white;
+  margin-top: 2%;
+  padding: 1%;
+  border: none;
+  border-bottom: 1px solid green;
+  width: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+img {
+  max-width: 400px;
+  max-height: 300px;
+}
+
+p, h3 {
+  max-width: 600px;
+}
+
+#container {
+  background-color: black;
+  height: 100%;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  width: 70vmin;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+.start {
+  width: 50vw;
+}
+
+.prompt {
+  font-size: 1.3em;
+}
+
+.points {
+  color: coral;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+/********************/
+/* Masonry Addition */
+/********************/
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  width: 95%;
+  margin: 3em auto;
+}
+
+.masonry {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: center;
+  -moz-column-gap: 1.5em;
+  -webkit-column-gap: 1.5em;
+  column-gap: 1.5em;
+  font-size: .85em;
+  padding: 3%;
+}
+
+.item {
+  position: relative;
+  float: left;
+  margin: 1% 1% 0 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
