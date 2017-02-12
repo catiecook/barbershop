@@ -27,7 +27,8 @@ angular.module('gif')
       end: false,
       spaceship: false,
       find: false,
-      find: false
+      find: false,
+      trust: false
     };
 
     $scope.start = function(cont) {
@@ -68,12 +69,12 @@ angular.module('gif')
           term = "hiking"
           break;
         case "east":
-          $scope.conditionals.river = true;
-          term = "river"
+          $scope.conditionals.east = true;
+          term = "cave"
           break;
         case "west":
           $scope.conditionals.west = true;
-          term = "cave";
+          term = "river";
           break;
         case "eat":
           $scope.conditionals.eat = true;
@@ -87,7 +88,6 @@ angular.module('gif')
           break;
         case "leave":
           $scope.conditionals.leave = true;
-          $scope.end = true;
           term = "face palm";
           break;
         case "shiny":
@@ -116,7 +116,7 @@ angular.module('gif')
         case "north":
           $scope.conditionals.north = true;
           $scope.points += 5;
-          term = "city"
+          term = "city town"
           break;
         case "free":
           $scope.conditionals.leave = true;
@@ -135,6 +135,26 @@ angular.module('gif')
           $scope.conditionals.find = true;
           $scope.points += 12;
           term = "detective sherlock"
+          break;
+        case "trust":
+          $scope.conditionals.trust = true;
+          term = "gold chain bling";
+          break;
+        case "run":
+          $scope.conditionals.run = true;
+          term = "run";
+          break;
+        case "town":
+          $scope.conditionals.town = true;
+          term = "town village";
+          break;
+        case "tell":
+          $scope.conditionals.tell = true;
+          term = "gossip";
+          break;
+        case "space":
+          $scope.conditionals.space = true;
+          term = "spaceship";
           break;
       }
 
