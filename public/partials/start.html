@@ -1,8 +1,18 @@
-<md-content layout-padding>
-  <div class="content">
-    <h3 id="element">Welcome to Giff-venture!</h3>
-    <p> Ready to play? </p>
-    <input type="text" placeholder="Yes/No...">
+<div class="content start">
+
+  <h3>Behold!</h3>
+  <img src="https://media3.giphy.com/media/HVr4gFHYIqeti/giphy-downsized.gif">
+  <p>You're standing under a tree. Before you is a giant boulder and to the left is a puppy.</p>
+    <p>You have three options, pet the PUPPY, climb the BOULDER, or make a walking stick from a branch on the TREE.</p>
+
+  <form ng-submit="getGif(choice)" action="/bpt">
+    <label class="prompt">  >> $ </label>
+    <input type="text"
+           ng-model="choice"
+           name="usr_choice"
+           class="input"
+           md-autofocus
+           placeholder="Boulder/Puppy/Tree">
     </input>
-  </div>
-</md-content>
+  </form>
+</div>

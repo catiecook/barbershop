@@ -5,8 +5,8 @@
       <h3>Welcome to Giff-venture!</h3>
       <p> Ready to play? </p>
 
-        <form ng-submit="start(ans)">
-          <label class="prompt"> >> $ </label>
+        <form ng-submit="start(ans)" action="/start">
+          <label class="prompt"> >>$ </label>
           <input type="text"
                  ng-model="ans"
                  name="answer"
@@ -15,159 +15,6 @@
                  placeholder="Yes/No...">
           </input>
         </form>
-
-    </div>
-
-    <div class="content"
-         ng-show="conditionals.end">
-
-      <h3>Bummer! See ya next time </h3>
-      <img src={{tempGif}} alt="face-palm">
-      <p> Unless you want to play again...? </p>
-
-      <form ng-submit="start(end)">
-        <label class="prompt"> >> $ </label>
-        <input type="text"
-               ng-model="end"
-               name="ending"
-               class="input"
-               placeholder="Yes">
-        </input>
-      </form>
-    </div>
-
-    <!-- first phase -->
-    <div class="content"
-         ng-show="first">
-
-      <h3>Behold!</h3>
-      <img src="https://media3.giphy.com/media/HVr4gFHYIqeti/giphy-downsized.gif">
-      <p>You're standing under a tree. Before you is a giant boulder and to the left is a puppy.</p>
-        <p>You have three options, pet the PUPPY, climb the BOULDER, or make a walking stick from a branch on the TREE.</p>
-
-      <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
-        <input type="text"
-               ng-model="choice"
-               name="usr_choice"
-               class="input"
-               md-autofocus
-               placeholder="Boulder/Puppy/Tree">
-        </input>
-      </form>
-    </div>
-
-  <!-- Puppy -->
-    <div class="content"
-         ng-show="conditionals.puppy">
-      <h3>You chose to pet the puppy <em> +14 pts </em> </h3>
-        <img ng-src="{{tempGif}}" alt="story image">
-
-        <p>The puppy looks to be alone, and is super fluffy. What do you do?</p>
-        <p>KEEP him, or LEAVE him where he is and continue on.</p>
-      <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
-        <input type="text"
-               ng-model="choice"
-               name="usr_choice"
-               class="input"
-               placeholder="Keep/Leave">
-        </input>
-      </form>
-    </div>
-
-  <!-- Boulder -->
-    <div class="content"
-         ng-show="conditionals.boulder">
-
-      <h3>You chose to climb the boulder <em> +7 pts </em> </h3>
-        <img src={{tempGif}} alt="story image">
-          <p>Wow! That was a sketchy climb...Cool view though! It looks like there's a river across the field to the east. However, you're feeling a little hungry and you've got a snack in your bag.</p>
-        <p>Do you want to go check out the river to the WEST, or EAT your snack now? Keep in mind you may be on this adventure for a while...</p>
-      <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
-        <input type="text"
-               ng-model="choice"
-               name="usr_choice"
-               class="input"
-               placeholder="WEST/EAT">
-        </input>
-      </form>
-    </div>
-
-  <!-- Tree -->
-    <div class="content"
-         ng-show="conditionals.tree">
-
-      <h3>You chose to make a walking stick</h3>
-        <img src={{tempGif}} alt="story image">
-          <p>...Someone's adventurous!</p>
-        <p>After you make a proper walking stick, you wander around and start to hear sounds indicating that there's a river nearby. Probably a mile to the east. Earlier, you also heard that there's also a cave the same distance to the west.</p>
-        <p> Do you walk WEST to the river, or EAST to the cave?</p>
-      <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
-        <input type="text"
-               ng-model="choice"
-               name="usr_choice"
-               class="input"
-               placeholder="East/West">
-        </input>
-      </form>
-    </div>
-
-  <!-- Puppy Run-->
-  <div class="content"
-       ng-show="conditionals.keep">
-    <h3> Looks like you have a new hiking buddy! <em> +10 pts </em> </h3>
-      <img src="{{tempGif}}"
-           alt="story image">
-      <p>The puppy randomly starts running to the west.</p>
-      <p>Do you follow him WEST, or do you let him run FREE?</p>
-    <form ng-submit="getGif(choice)">
-      <label class="prompt">  >> $ </label>
-      <input type="text"
-             ng-model="choice"
-             name="usr_choice"
-             class="input"
-             placeholder="West/Free">
-      </input>
-    </form>
-  </div>
-
-  <!-- Leave -->
-    <section ng-show="conditionals.leave">
-      <section class="content">
-        <h3>That's a weird choice.</h3>
-        <p> Game Over! <detail class="points">Total Points: {{points}}</detail> </p>
-        <p>Here's a recap of your day: </p>
-      </section>
-      <!-- <section class="wrapper">
-        <div class="masonry">
-          <div class="item"
-               ng-repeat="gif in allGifs track by $index">
-              <img ng-src={{gif}}>
-          </div>
-        </div>
-      </section> -->
-    </section>
-
-  <!-- East-->
-    <div class="content"
-         ng-show="conditionals.east">
-      <h3> The Cave! <em> +5 pts </em> </h3>
-        <img src="{{tempGif}}"
-             alt="story image">
-      <p>You see a shiny thing towards the back of the cave, by the wall. You also see, closer to you, is a makeshift stairwell that seems to go to a lower level of the cave.</p>
-      <p>Do you go deeper into the cave to go check out this SHINY object, or do you go down the STAIRS to see whats going on down there?</p>
-      <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
-        <input type="text"
-               ng-model="choice"
-               name="usr_choice"
-               class="input"
-               placeholder="Shiny/Stairs">
-        </input>
-      </form>
     </div>
 
   <!-- West -->
@@ -180,7 +27,7 @@
       <p>Should you STAY a while, or go EAST and check out the cave you heard of earlier instead?</p>
 
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
                name="usr_choice"
@@ -200,7 +47,7 @@
         <p>The treasure is looks like it may have belonged to someone.</p>
         <p>Its a pretty big chest full of jewels and other goods, do you go NORTH towards town to figure out what to do with the treasure, or do you want to leave it here and go look down those STAIRS you saw before?</p>
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
                name="usr_choice"
@@ -221,7 +68,7 @@
       <p>It seems that there is a spaceship down here! How the heck?!</p>
       <p>Do you want to board the SPACESHIP and see what's in there, or retreat and go back up and collect the SHINY object you saw before?</p>
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
                name="usr_choice"
@@ -243,7 +90,7 @@
       <p>It's also pretty nice here, do you want to STAY here and relax in the sun, or do you want to go NORTH to town and see if you can find the key's owner?</p>
 
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
                name="usr_choice"
@@ -264,7 +111,7 @@
       <p>You post a craigslist ad about the treasure, but noone responds. Do you want to PAWN the treasure, or keep it and continue to try and FIND the owner?</p>
 
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
                name="usr_choice"
@@ -286,7 +133,7 @@
       <p>You're kind of thirsty, and now that you have come into some money, you decide to treat yourself!. Do you want a BEER or some COFFEE?</p>
 
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
                name="usr_choice"
@@ -307,7 +154,7 @@
       <p>Do you TRUST this human, or do you think you should just PAWN it instead, and not deal with it anymore?</p>
 
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
                name="usr_choice"
@@ -328,7 +175,7 @@
       </section>
 
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
                name="usr_choice"
@@ -360,7 +207,7 @@
       </section>
 
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
                name="usr_choice"
@@ -380,7 +227,7 @@
         <p>Do you want to get a BEER or a COFFEE?</p>
       </section>
       <form ng-submit="getGif(choice)">
-        <label class="prompt">  >> $ </label>
+        <label class="prompt">  >>$ </label>
         <input type="text"
                 ng-model="choice"
                 name="usr_choice"
@@ -400,7 +247,7 @@
           <p>He invites you to grab a coffee or beer with him to share alien experiences. Which do you choose–COFFEE or BEER?</p>
         </section>
         <form ng-submit="getGif(choice)">
-          <label class="prompt">  >> $ </label>
+          <label class="prompt">  >>$ </label>
           <input type="text"
                   ng-model="choice"
                   name="usr_choice"
@@ -421,7 +268,7 @@
     <p>Today was long, you want to treat yourself for your good ded, do you go get COFFEE or BEER to end out your day?</p>
 
     <form ng-submit="getGif(choice)">
-      <label class="prompt">  >> $ </label>
+      <label class="prompt">  >>$ </label>
       <input type="text"
               ng-model="choice"
               name="usr_choice"
@@ -481,19 +328,6 @@
       <p>Your adventure is finished.</p>
       </section>
     </div>
-
-    <!-- End -->
-      <div ng-show="end">
-        <section class="content start">
-        <h3> Thats kind of lame, but whatever </h3>
-          <img ng-src="{{tempGif}}"
-               alt="story image">
-
-          <p>Unless you want to try again...</p>
-          <a href="/"><button>Play Again</button></a>
-        </section>
-      </div>
-
 
   </div>
 </div>
