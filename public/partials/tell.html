@@ -1,0 +1,19 @@
+<!-- Tell -->
+      <div>
+        <section class="content">
+          <h3>The story of the alien encounter</h3>
+          <img src="{{tempGif}}"
+                 alt="story image">
+          <p>This stranger seems to believe you, and says he heard that cave sometimes gets visits from alients. It seems like he had a simmilar experience, and could be a good friend!</p>
+          <p>He invites you to grab a coffee or beer with him to share alien experiences. Which do you choose–COFFEE or BEER?</p>
+        </section>
+        <form ng-submit="getGif(choice)">
+          <label class="prompt">  >>$ </label>
+          <input type="text"
+                  ng-model="choice"
+                  name="usr_choice"
+                  class="input"
+                  placeholder="Beer/Coffee">
+          </input>
+        </form>
+      </div>

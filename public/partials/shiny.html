@@ -1,0 +1,18 @@
+<!-- Shiny -->
+  <div class="content">
+    <h3> Woo!! You found treasure! <em> +30 pts </em> </h3>
+    </h3>
+      <img src="{{tempGif}}"
+           alt="story image">
+      <p>The treasure is looks like it may have belonged to someone.</p>
+      <p>Its a pretty big chest full of jewels and other goods, do you go NORTH towards town to figure out what to do with the treasure, or do you want to leave it here and go look down those STAIRS you saw before?</p>
+    <form ng-submit="getGif(choice)">
+      <label class="prompt">  >>$ </label>
+      <input type="text"
+             ng-model="choice"
+             name="usr_choice"
+             class="input"
+             placeholder="North/Stairs">
+      </input>
+    </form>
+  </div>

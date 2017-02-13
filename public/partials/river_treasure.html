@@ -1,0 +1,20 @@
+<!-- River with treasure -->
+  <div class="content">
+
+    <h3> You made it to the river! <em> +5 pts </em> </h3>
+
+      <img src="{{tempGif}}"
+           alt="story image">
+    <p>You wash the key and see that it has a secret code enscribed on it!</p>
+    <p>It's also pretty nice here, do you want to STAY here and relax in the sun, or do you want to go NORTH to town and see if you can find the key's owner?</p>
+
+    <form ng-submit="getGif(choice)">
+      <label class="prompt">  >>$ </label>
+      <input type="text"
+             ng-model="choice"
+             name="usr_choice"
+             class="input"
+             placeholder="Stay/North">
+      </input>
+    </form>
+  </div>

@@ -1,0 +1,20 @@
+<!-- Pawn -->
+  <div class="content">
+
+    <h3> To the Pawn Shop! </h3>
+    </h3>
+      <img src="{{tempGif}}"
+           alt="story image">
+    <p>The pawn shop told you it's a collector and he will give you $100.</p>
+    <p>You're kind of thirsty, and now that you have come into some money, you decide to treat yourself!. Do you want a BEER or some COFFEE?</p>
+
+    <form ng-submit="getGif(choice)">
+      <label class="prompt">  >>$ </label>
+      <input type="text"
+             ng-model="choice"
+             name="usr_choice"
+             class="input"
+             placeholder="Beer/Coffee">
+      </input>
+    </form>
+  </div>

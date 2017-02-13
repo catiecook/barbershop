@@ -1,0 +1,18 @@
+<!-- Stairs -->
+  <div class="content">
+    <h3> You decend the stairs.
+      <em> +10 pts for bravery</em> </h3>
+      <img src="{{tempGif}}"
+           alt="story image">
+    <p>It seems that there is a spaceship down here! How the heck?!</p>
+    <p>Do you want to board the SPACESHIP and see what's in there, or retreat and go back up and collect the SHINY object you saw before?</p>
+    <form ng-submit="getGif(choice)">
+      <label class="prompt">  >>$ </label>
+      <input type="text"
+             ng-model="choice"
+             name="usr_choice"
+             class="input"
+             placeholder="Shiny/Spaceship">
+      </input>
+    </form>
+  </div>
