@@ -4,7 +4,7 @@ angular.module('gif', ['ngRoute','ngAnimate', 'ngMaterial', 'ngAria'])
     $routeProvider.when('/', {
         templateUrl: 'partials/index.html',
         controller: 'MainController'
-    })
+    })n
     .when('/start', {
         templateUrl: 'partials/start.html',
         controller: 'MainController'
