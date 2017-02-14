@@ -44,7 +44,7 @@ angular.module('gif')
         .then((data) => {
           let num = Math.floor(Math.random() * 10)
           $scope.tempGif = data.data[num].images.downsized.url;
-          $scope.$apply();
+          // $scope.$apply();
         })
       }
     };
