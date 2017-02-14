@@ -32,9 +32,7 @@ angular.module('gif')
 
     $scope.getGif = (term) => {
       $scope.conditionals = {};
-
       $scope.counter += 1;
-
       term = term.toLowerCase();
 
       switch(term) {
