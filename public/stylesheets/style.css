@@ -32,11 +32,20 @@ form {
 
 img {
   max-height: 90vw;
+  min-width: 35vw;
 }
 
-p, h3 {
-  max-width: 60vw;
+p, h2 {
+  max-width: 40vw;
   text-align: center;
+}
+
+p {
+  font-size: 1.4em;
+}
+
+button {
+  margin-top: 5%;
 }
 
 #container {
@@ -52,6 +61,10 @@ p, h3 {
   height: auto;
 }
 
+.pts {
+  padding-bottom: 2%;
+}
+
 .start {
   width: 50vw;
 }
@@ -63,42 +76,15 @@ p, h3 {
 .points {
   color: coral;
   text-align: center;
+  padding: 2% 0;
 }
 
 a:link {
   text-decoration: none;
 }
 
-/********************/
-/* Masonry Addition */
-/********************/
-
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  align-content: space-around;
-  width: 95%;
-  margin: 3em auto;
-}
-
-.masonry {
-  margin: 0 auto;
-  width: 90vw;
-  display: flex;
-  flex-wrap: wrap;
-  align-self: center;
-  justify-content: center;
-  -moz-column-gap: 1.5em;
-  -webkit-column-gap: 1.5em;
-  column-gap: 1.5em;
-  font-size: .85em;
-}
-
-.item {
-  position: relative;
-  float: left;
-  margin: 1% 1% 0 0;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+@media only screen and (max-width: 900px) {
+    p, h2 {
+      max-width: 80vw;
+    }
 }

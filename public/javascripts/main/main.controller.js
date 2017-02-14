@@ -1,6 +1,6 @@
 angular.module('gif')
 
-.controller('MainController', function($scope, mainService, $timeout, $mdDialog) {
+.controller('MainController', function($scope, mainService, $timeout, $mdDialog, $window) {
     $scope.tempGif = "";
     $scope.allGifs = ["https://media3.giphy.com/media/HVr4gFHYIqeti/giphy-downsized.gif"];
     $scope.start = true;
@@ -9,27 +9,8 @@ angular.module('gif')
     $scope.counter = 0;
     $scope.points = 0;
     let count = 0;
-    $scope.conditionals = {
-      puppy: false,
-      boulder: false,
-      tree: false,
-      river: false,
-      west: false,
-      keep: false,
-      leave: false,
-      shiny: false,
-      north: false,
-      stay: false,
-      eat: false,
-      pawn: false,
-      keep: false,
-      coffee: false,
-      end: false,
-      spaceship: false,
-      find: false,
-      find: false,
-      trust: false
-    };
+
+    $scope.conditionals = {};
 
     $scope.start = function(cont) {
       let answer = cont.toLowerCase()
@@ -41,10 +22,10 @@ angular.module('gif')
         $scope.start = false;
         $scope.end = true;
         mainService.getGif("whatever")
-        .then((data) => {
+        .then((response) => {
+          let data = response.data;
           let num = Math.floor(Math.random() * 10)
           $scope.tempGif = data.data[num].images.downsized.url;
-          // $scope.$apply();
         })
       }
     };
@@ -59,21 +40,26 @@ angular.module('gif')
       switch(term) {
         case "puppy":
           $scope.conditionals.puppy = true;
+          $scope.points += 15;
           break;
         case "boulder":
           $scope.conditionals.boulder = true;
+          $scope.points += 7;
           term = "rock climb";
           break;
         case "tree":
           $scope.conditionals.tree = true;
+          $scope.points += 3;
           term = "hiking"
           break;
         case "east":
           $scope.conditionals.east = true;
+          $scope.points += 5;
           term = "cave"
           break;
         case "west":
           $scope.conditionals.west = true;
+          $scope.points += 5;
           term = "river";
           break;
         case "eat":
@@ -92,7 +78,7 @@ angular.module('gif')
           break;
         case "shiny":
           $scope.conditionals.shiny = true;
-          $scope.points += 30;
+          $scope.points += 16;
           term = "treasure summer money speed cash bros";
           break;
         case "stay":
@@ -102,7 +88,7 @@ angular.module('gif')
           break;
         case "pawn":
           $scope.conditionals.pawn = true;
-          $scope.points += 5;
+          $scope.points -= 5;
           term = "pawn shop"
           break;
         case "coffee":
@@ -115,41 +101,45 @@ angular.module('gif')
           break;
         case "north":
           $scope.conditionals.north = true;
-          $scope.points += 5;
+          $scope.points += 7;
           term = "city town"
           break;
         case "free":
-          $scope.conditionals.leave = true;
+          $scope.conditionals.free = true;
           $scope.points += 5;
-          term = "puppy run free"
+          term = "face palm"
           break;
         case "spaceship":
           $scope.conditionals.spaceship = true;
-          $scope.points += 30;
+          $scope.points += 9;
           break;
         case "stairs":
           $scope.conditionals.stairs = true;
-          $scope.points += 10;
+          $scope.points += 14;
           break;
         case "find":
           $scope.conditionals.find = true;
-          $scope.points += 12;
+          $scope.points += 22;
           term = "detective sherlock"
           break;
         case "trust":
           $scope.conditionals.trust = true;
+          $scope.points += 9;
           term = "gold chain bling";
           break;
         case "run":
           $scope.conditionals.run = true;
+          $scope.points -= 3;
           term = "run";
           break;
         case "town":
           $scope.conditionals.town = true;
+          $scope.points += 3;
           term = "town village";
           break;
         case "tell":
           $scope.conditionals.tell = true;
+          $scope.points += 7;
           term = "gossip";
           break;
         case "space":
@@ -161,19 +151,23 @@ angular.module('gif')
       $scope.first = false;
 
       mainService.getGif(term)
-      .then((data) => {
+      .then((response) => {
+        let data = response.data;
+        console.log(data);
         $('.input').val("")
         if (term === "treasure summer money speed cash bros"){
           $scope.tempGif = data.data[0].images.downsized.url;
-          $scope.$apply();
           $scope.allGifs.push(data.data[0].images.downsized.url);
         }
         else {
             let num = Math.floor(Math.random() * 10)
             $scope.tempGif = data.data[num].images.downsized.url;
-            $scope.$apply();
             $scope.allGifs.push(data.data[num].images.downsized.url);
         }
       });
+    }
+
+    $scope.reload = function() {
+      $window.location.reload();
     }
 });
