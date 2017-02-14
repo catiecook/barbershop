@@ -63,7 +63,7 @@ angular.module('gif')
           term = "river";
           break;
         case "eat":
-          $scope.conditionals.eat = true;
+          $scope.conditionals.snack = true;
           term = "snack";
           $scope.points += 5;
           break;
@@ -153,7 +153,6 @@ angular.module('gif')
       mainService.getGif(term)
       .then((response) => {
         let data = response.data;
-        console.log(data);
         $('.input').val("")
         if (term === "treasure summer money speed cash bros"){
           $scope.tempGif = data.data[0].images.downsized.url;
