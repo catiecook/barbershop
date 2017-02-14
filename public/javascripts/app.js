@@ -14,8 +14,8 @@ angular.module('gif', ['ngRoute','ngAnimate', 'ngMaterial', 'ngAria'])
         templateUrl: 'partials/end.html',
         controller: 'MainController'
     })
-    .when('/bpt', {
-        templateUrl: 'partials/bpt.html',
+    .when('/boulder', {
+        templateUrl: 'partials/boulder.html',
         controller: 'MainController'
     })
     .when('/puppy', {
