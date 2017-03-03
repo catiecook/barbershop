@@ -31,8 +31,9 @@ angular.module('gif')
     };
 
     $scope.getGif = (term) => {
+
       let wordOpts = [
-        "puppy", "boulder", "tree", "east", "west", "eat", "keep", "leave", "shiny", "stay", "pawn", "coffee", "beer", "north", "free", "shapeship", "stairs", "run", "tell", "town", "trust", "space", "find"
+        "puppy", "boulder", "tree", "east", "west", "eat", "keep", "leave", "shiny", "stay", "pawn", "coffee", "beer", "north", "free", "spaceship", "stairs", "run", "tell", "town", "trust", "space", "find"
       ];
 
       $scope.conditionals = {};
