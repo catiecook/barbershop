@@ -1,5 +1,4 @@
 <!-- Spaceship -->
-    <div>
       <section class="content">
         <h3>Aliens!</h3>
         <img src="{{tempGif}}"
@@ -8,7 +7,7 @@
         <p>Do you go to SPACE with them, or RUN away?</p>
       </section>
 
-      <form ng-submit="getGif(choice)">
+      <form ng-submit="getGif(choice, $event)">
         <label class="prompt">  >>$ </label>
         <input type="text"
                ng-model="choice"
@@ -17,4 +16,3 @@
                placeholder="Space/Run">
         </input>
       </form>
-    </div>

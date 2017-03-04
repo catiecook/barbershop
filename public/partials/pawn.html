@@ -8,7 +8,7 @@
     <p>The pawn shop told you There is a lot of valuable stuff in there and he is willing to give you $300 for it! Score!</p>
     <p>You're kind of thirsty, and now that you have come into some money, you decide to treat yourself!. Do you want a BEER or some COFFEE?</p>
 
-    <form ng-submit="getGif(choice)">
+    <form ng-submit="getGif(choice, $event)">
       <label class="prompt">  >>$ </label>
       <input type="text"
              ng-model="choice"

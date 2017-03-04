@@ -1,21 +1,19 @@
 <!-- Run -->
-  <div ng-show="conditionals.run">
-    <section class="content">
-      <h2>You're Running!</h2>
-      <em class="pts"> -3 points for exhaustion </em>
-      <img ng-src="{{tempGif}}"
-           alt="story image">
-      <p>The aliens don't seem to be chasing you, and you've made your way out of the cave and into the field.</p>
-      <p>Do you want to keep running to TOWN and put this experience behind you, or try to find someone to TELL about the aliens?</p>
-    </section>
+<section class="content">
+  <h2>You're Running!</h2>
+  <em class="pts"> -3 points for exhaustion </em>
+  <img ng-src="{{tempGif}}"
+       alt="story image">
+  <p>The aliens don't seem to be chasing you, and you've made your way out of the cave and into the field.</p>
+  <p>Do you want to keep running to TOWN and put this experience behind you, or try to find someone to TELL about the aliens?</p>
+</section>
 
-    <form ng-submit="getGif(choice)">
-      <label class="prompt">  >>$ </label>
-      <input type="text"
-             ng-model="choice"
-             name="usr_choice"
-             class="input"
-             placeholder="Town/Tell">
-      </input>
-    </form>
-  </div>
+<form ng-submit="getGif(choice, $event)">
+  <label class="prompt">  >>$ </label>
+  <input type="text"
+         ng-model="choice"
+         name="usr_choice"
+         class="input"
+         placeholder="Town/Tell">
+  </input>
+</form>
