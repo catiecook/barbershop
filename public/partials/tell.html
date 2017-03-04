@@ -1,0 +1,21 @@
+<!-- Tell -->
+<div ng-show="conditionals.tell">
+  <section class="content">
+    <h2>Alien Encounter!</h2>
+    <em class="pts"> +7 points </em>
+    <img ng-src="{{tempGif}}"
+         alt="story image">
+    <p>The stranger seems to believe you, and says he heard that the cave sometimes gets visits from aliens. It seems like he had a similar experience, and could be a good friend!</p>
+    <p>He invites you to grab a coffee or beer with him to share alien experiences. Which do you choose–COFFEE or BEER?</p>
+  </section>
+
+  <form ng-submit="getGif(choice)">
+    <label class="prompt">  >>$ </label>
+    <input type="text"
+           ng-model="choice"
+           name="usr_choice"
+           class="input"
+           placeholder="Beer/Coffee">
+    </input>
+  </form>
+</div>

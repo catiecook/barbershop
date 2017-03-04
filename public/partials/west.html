@@ -1,0 +1,19 @@
+<!-- West -->
+  <div class="content">
+    <h3> You made it to the river! <em> +5 pts </em> </h3>
+    </h3>
+      <img src="{{tempGif}}"
+           alt="story image">
+    <p>The sun is out and it's quite nice here.</p>
+    <p>Should you STAY a while, or go EAST and check out the cave you heard of earlier instead?</p>
+
+    <form ng-submit="getGif(choice)">
+      <label class="prompt">  >>$ </label>
+      <input type="text"
+             ng-model="choice"
+             name="usr_choice"
+             class="input"
+             placeholder="East/Stay">
+      </input>
+    </form>
+  </div>

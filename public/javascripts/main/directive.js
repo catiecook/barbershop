@@ -4,4 +4,5 @@ angular.module('gif')
       restrict: 'E',
       template: '<p></p>'
     };
-  });
+
+  })

@@ -9,18 +9,22 @@ angular.module('gif')
     $scope.counter = 0;
     $scope.points = 0;
     let count = 0;
+    $scope.template = "";
 
     $scope.conditionals = {};
+
 
     $scope.start = function(cont) {
       let answer = cont.toLowerCase()
       if(answer === "yes") {
         $scope.start = false;
         $scope.first = true;
+        $scope.template = "partials/start.html";
       }
       if(answer === "no") {
         $scope.start = false;
         $scope.end = true;
+        $scope.template = "partials/end.html";
         mainService.getGif("whatever")
         .then((response) => {
           let data = response.data;
@@ -29,8 +33,11 @@ angular.module('gif')
         })
       }
     };
-
+    
     $scope.getGif = (term) => {
+      $scope.conditionals = {};
+      $scope.counter += 1;
+      $scope.template = "partials/"+ term + ".html";
 
       let wordOpts = [
         "puppy", "boulder", "tree", "east", "west", "eat", "keep", "leave", "shiny", "stay", "pawn", "coffee", "beer", "north", "free", "spaceship", "stairs", "run", "tell", "town", "trust", "space", "find"
@@ -39,12 +46,12 @@ angular.module('gif')
       $scope.conditionals = {};
       $scope.counter += 1;
       term = term.toLowerCase();
+
       for(let i = 0; i < wordOpts.length; i++){
         if(term != wordOpts[i]){
           $('.error').val("Try one of the options in uppercase.")
         }
         else {
-          console.log(term, wordOpts[i]);
 
           switch(term) {
             case "puppy":

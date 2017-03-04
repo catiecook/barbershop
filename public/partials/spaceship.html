@@ -1,0 +1,20 @@
+<!-- Spaceship -->
+    <div>
+      <section class="content">
+        <h3>Aliens!</h3>
+        <img src="{{tempGif}}"
+             alt="story image">
+        <p>You've boarded the spaceship and discovered a new life form! The aliens think you are facinating, and invite you to come with them to space. Seems legit.</p>
+        <p>Do you go to SPACE with them, or RUN away?</p>
+      </section>
+
+      <form ng-submit="getGif(choice)">
+        <label class="prompt">  >>$ </label>
+        <input type="text"
+               ng-model="choice"
+               name="usr_choice"
+               class="input"
+               placeholder="Space/Run">
+        </input>
+      </form>
+    </div>
