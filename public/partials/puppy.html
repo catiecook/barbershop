@@ -1,0 +1,20 @@
+<!-- Puppy -->
+  <div ng-show="conditionals.puppy">
+    <section class="content">
+      <h2>You chose to pet the puppy</h2>
+      <em class="pts"> +14 points </em>
+      <img ng-src="{{tempGif}}" alt="story image">
+      <p>The puppy looks to be alone, and is super fluffy. What do you do?</p>
+      <p>KEEP him, or LEAVE him where he is and continue on.</p>
+    </section>
+    <form ng-submit="getGif(choice)">
+      <label class="prompt">  >>$ </label>
+      <input type="text"
+             ng-model="choice"
+             name="usr_choice"
+             class="input"
+             placeholder="Keep/Leave">
+      </input>
+    </form>
+    <detail class="error"></detail>
+  </div>
