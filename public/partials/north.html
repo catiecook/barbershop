@@ -7,7 +7,7 @@
            alt="story image">
     <p>You post a craigslist ad about the treasure, but noone responds. Do you want to PAWN the treasure, or keep it and continue to try and FIND the owner?</p>
 
-    <form ng-submit="getGif(choice)">
+    <form ng-submit="getGif(choice, $event)">
       <label class="prompt">  >>$ </label>
       <input type="text"
              ng-model="choice"

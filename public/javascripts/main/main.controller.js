@@ -11,9 +11,6 @@ angular.module('gif')
     let count = 0;
     $scope.template = "";
 
-    $scope.conditionals = {};
-
-
     $scope.start = function(cont) {
       let answer = cont.toLowerCase()
       if(answer === "yes") {
@@ -34,122 +31,102 @@ angular.module('gif')
       }
     };
 
-    $scope.getGif = (term) => {
+    $scope.getGif = (term, e) => {
+      e.preventDefault();
 
-      $scope.conditionals = {};
+      let wordOpts = [
+        "puppy", "boulder", "tree", "east", "west", "eat", "keep", "leave", "shiny", "stay", "pawn", "coffee", "beer", "north", "free", "spaceship", "stairs", "run", "tell", "town", "trust", "space", "find"
+      ];
+
       $scope.counter += 1;
       $scope.template = "partials/"+ term + ".html";
-      $scope.conditionals = {};
       $scope.counter += 1;
       term = term.toLowerCase();
 
           switch(term) {
             case "puppy":
-              $scope.conditionals.puppy = true;
               $scope.points += 15;
               break;
             case "boulder":
-              $scope.conditionals.boulder = true;
               $scope.points += 7;
               term = "rock climb";
               break;
             case "tree":
-              $scope.conditionals.tree = true;
               $scope.points += 3;
               term = "hiking"
               break;
             case "east":
-              $scope.conditionals.east = true;
               $scope.points += 5;
               term = "cave"
               break;
             case "west":
-              $scope.conditionals.west = true;
               $scope.points += 5;
               term = "river";
               break;
             case "eat":
-              $scope.conditionals.snack = true;
               term = "snack";
               $scope.points += 5;
               break;
             case "keep":
-              $scope.conditionals.keep = true;
               $scope.points += 10;
               term = "puppy woods"
               break;
             case "leave":
-              $scope.conditionals.leave = true;
               term = "face palm";
               break;
             case "shiny":
-              $scope.conditionals.shiny = true;
               $scope.points += 16;
               term = "treasure summer money speed cash bros";
               break;
             case "stay":
-              $scope.conditionals.stay = true;
               $scope.points += 5;
               term = "space abducted alien"
               break;
             case "pawn":
-              $scope.conditionals.pawn = true;
               $scope.points -= 5;
               term = "pawn shop"
               break;
             case "coffee":
-              $scope.conditionals.coffee = true;
               $scope.points += 5;
               break;
             case "beer":
-              $scope.conditionals.beer = true;
               $scope.points += 5;
               break;
             case "north":
-              $scope.conditionals.north = true;
               $scope.points += 7;
               term = "city town"
               break;
             case "free":
-              $scope.conditionals.free = true;
               $scope.points += 5;
               term = "face palm"
               break;
             case "spaceship":
-              $scope.conditionals.spaceship = true;
               $scope.points += 9;
               break;
             case "stairs":
-              $scope.conditionals.stairs = true;
               $scope.points += 14;
               break;
             case "find":
-              $scope.conditionals.find = true;
               $scope.points += 22;
               term = "detective sherlock"
               break;
             case "trust":
-              $scope.conditionals.trust = true;
               $scope.points += 9;
               term = "gold chain bling";
               break;
             case "run":
-              $scope.conditionals.run = true;
               $scope.points -= 3;
               term = "run";
               break;
             case "town":
-              $scope.conditionals.town = true;
               $scope.points += 3;
               term = "town village";
               break;
             case "tell":
-              $scope.conditionals.tell = true;
               $scope.points += 7;
               term = "gossip";
               break;
             case "space":
-              $scope.conditionals.space = true;
               term = "spaceship";
               break;
           }

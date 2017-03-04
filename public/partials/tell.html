@@ -1,5 +1,4 @@
 <!-- Tell -->
-<div ng-show="conditionals.tell">
   <section class="content">
     <h2>Alien Encounter!</h2>
     <em class="pts"> +7 points </em>
@@ -9,7 +8,7 @@
     <p>He invites you to grab a coffee or beer with him to share alien experiences. Which do you choose–COFFEE or BEER?</p>
   </section>
 
-  <form ng-submit="getGif(choice)">
+  <form ng-submit="getGif(choice, $event)">
     <label class="prompt">  >>$ </label>
     <input type="text"
            ng-model="choice"
@@ -18,4 +17,3 @@
            placeholder="Beer/Coffee">
     </input>
   </form>
-</div>

@@ -1,20 +1,19 @@
 <!-- Trust -->
-  <div ng-show="conditionals.trust">
-    <section class="content">
-      <h2>Good Instincts!</h2>
-      <em class="pts"> +9 points </em>
-        <img ng-src="{{tempGif}}"
-            alt="story image">
-      <p>Turns out this person is trust worthy and is really stoked you returned their treasure. They want to reward you with a gold chain of your choice from the teasure chest!</p>
-      <p>Today was long, you want to treat yourself for your good deed, do you go get COFFEE or BEER to end out your day?</p>
-    </section>
-    <form ng-submit="getGif(choice)">
-      <label class="prompt">  >>$ </label>
-      <input type="text"
-              ng-model="choice"
-              name="usr_choice"
-              class="input"
-              placeholder="Beer/Coffee">
-      </input>
-    </form>
-  </div>
+<section class="content">
+  <h2>Good Instincts!</h2>
+  <em class="pts"> +9 points </em>
+    <img ng-src="{{tempGif}}"
+         alt="story image">
+  <p>Turns out this person is trust worthy and is really stoked you returned their treasure. They want to reward you with a gold chain of your choice from the teasure chest!</p>
+  <p>Today was long, you want to treat yourself for your good deed, do you go get COFFEE or BEER to end out your day?</p>
+</section>
+
+<form ng-submit="getGif(choice, $event)">
+  <label class="prompt">  >>$ </label>
+  <input type="text"
+         ng-model="choice"
+         name="usr_choice"
+         class="input"
+         placeholder="Beer/Coffee">
+  </input>
+</form>

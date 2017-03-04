@@ -5,7 +5,7 @@
          alt="story image">
     <p>The puppy randomly starts running to the west.</p>
     <p>Do you follow him WEST, or do you let him run FREE?</p>
-  <form ng-submit="getGif(choice)">
+  <form ng-submit="getGif(choice, $event)">
     <label class="prompt">  >>$ </label>
     <input type="text"
            ng-model="choice"

@@ -1,21 +1,20 @@
 <!-- Tree -->
-  <div ng-show="conditionals.tree">
-    <section class="content">
-      <h2>You chose to make a walking stick</h2>
-      <em class="pts"> +3 points </em>
-      <img ng-src="{{tempGif}}"
-           alt="story image">
-      <p>...Someone's adventurous!</p>
-      <p>After you make a proper walking stick, you wander around and start to hear sounds indicating that there's a river nearby. Probably a mile to the west. Earlier, you also heard that there's a cave the same distance to the east.</p>
-      <p> Do you walk WEST to the river, or EAST to the cave?</p>
-    </section>
-    <form ng-submit="getGif(choice)">
-      <label class="prompt">  >>$ </label>
-      <input type="text"
-             ng-model="choice"
-             name="usr_choice"
-             class="input"
-             placeholder="East/West">
-      </input>
-    </form>
-  </div>
+<section class="content">
+  <h2>You chose to make a walking stick</h2>
+  <em class="pts"> +3 points </em>
+  <img ng-src="{{tempGif}}"
+       alt="story image">
+  <p>...Someone's adventurous!</p>
+  <p>After you make a proper walking stick, you wander around and start to hear sounds indicating that there's a river nearby. Probably a mile to the west. Earlier, you also heard that there's a cave the same distance to the east.</p>
+  <p> Do you walk WEST to the river, or EAST to the cave?</p>
+</section>
+
+<form ng-submit="getGif(choice, $event)">
+  <label class="prompt">  >>$ </label>
+  <input type="text"
+         ng-model="choice"
+         name="usr_choice"
+         class="input"
+         placeholder="East/West">
+  </input>
+</form>

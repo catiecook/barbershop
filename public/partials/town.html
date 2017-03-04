@@ -1,5 +1,4 @@
 <!-- Town -->
-  <div ng-show="conditionals.town">
     <section class="content">
       <h2>You made it!</h2>
       <em class="pts"> +3 points </em>
@@ -8,7 +7,7 @@
       <p>You've made it to town and want to treat yourself after a long and herroing day.</p>
       <p>Do you want to get a BEER or a COFFEE?</p>
     </section>
-    <form ng-submit="getGif(choice)">
+    <form ng-submit="getGif(choice, $event)">
       <label class="prompt">  >>$ </label>
       <input type="text"
               ng-model="choice"
@@ -17,4 +16,3 @@
               placeholder="Beer/Coffee">
       </input>
     </form>
-  </div>
