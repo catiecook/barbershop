@@ -83,6 +83,12 @@ button {
   padding: 2% 0;
 }
 
+.rules {
+  color: lightblue;
+  font-size: 1em;
+  width: 30vw;
+}
+
 .warning {
   font-size: .8em;
 }
