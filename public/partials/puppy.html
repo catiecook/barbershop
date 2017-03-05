@@ -1,18 +1,25 @@
 <!-- Puppy -->
-    <section class="content">
-      <h2>You chose to pet the puppy</h2>
-      <em class="pts"> +14 points </em>
-      <img ng-src="{{tempGif}}" alt="story image">
-      <p>The puppy looks to be alone, and is super fluffy. What do you do?</p>
-      <p>KEEP him, or LEAVE him where he is and continue on.</p>
-    </section>
-    <form ng-submit="getGif(choice, $event)">
-      <label class="prompt">  >>$ </label>
-      <input type="text"
-             ng-model="choice"
-             name="usr_choice"
-             class="input"
-             placeholder="Keep/Leave">
-      </input>
-    </form>
-    <detail class="error"></detail>
+<div class="content">
+  <section>
+    <h2>You chose to pet the puppy</h2>
+    <em class="pts"> +14 points </em>
+    <img ng-src="{{tempGif}}" alt="story image">
+    <p>The puppy looks to be alone, and is super fluffy. What do you do?</p>
+    <p>KEEP him, or LEAVE him where he is and continue on.</p>
+  </section>
+  <form ng-submit="getGif(choice, $event)" name="input">
+    <label class="prompt">  >>$ </label>
+    <input type="text"
+            ng-model="choice"
+            name="usr_choice"
+            class="input"
+            ng-pattern="inputs.puppy"
+            placeholder="Keep/Leave">
+    </input>
+  </form>
+  <p class="warning"
+     ng-show="input.usr_choice.$error.pattern"
+     style="color:red">
+     Please choose one of the options listed above (lower case).
+  </p>
+</div>

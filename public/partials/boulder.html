@@ -1,16 +1,22 @@
 <!-- Boulder -->
-  <div class="content">
-    <h3>You chose to climb the boulder <em> +7 pts </em> </h3>
-      <img src={{tempGif}} alt="story image">
+<div class="content">
+  <h3>You chose to climb the boulder <em> +7 pts </em> </h3>
+    <img src={{tempGif}} alt="story image">
         <p>Wow! That was a sketchy climb...Cool view though! It looks like there's a river across the field to the west. However, you're feeling a little hungry and you've got a snack in your bag.</p>
-      <p>Do you want to go check out the river to the WEST, or EAT your snack now? Keep in mind you may be on this adventure for a while...</p>
-    <form ng-submit="getGif(choice, $event)">
-      <label class="prompt">  >>$ </label>
-      <input type="text"
-             ng-model="choice"
-             name="usr_choice"
-             class="input"
-             placeholder="WEST/EAT">
-      </input>
-    </form>
-  </div>
+    <p>Do you want to go check out the river to the WEST, or EAT your snack now? Keep in mind you may be on this adventure for a while...</p>
+  <form ng-submit="getGif(choice, $event)" name="input">
+    <label class="prompt">  >>$ </label>
+    <input type="text"
+           ng-model="choice"
+           name="usr_choice"
+           class="input"
+           ng-pattern="inputs.boulder"
+           placeholder="WEST/EAT">
+    </input>
+  </form>
+  <p class="warning"
+     ng-show="input.usr_choice.$error.pattern"
+     style="color:red">
+     Please choose one of the options listed above (lower case).
+   </p>
+</div>

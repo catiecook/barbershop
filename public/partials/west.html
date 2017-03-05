@@ -7,13 +7,15 @@
   <p>The sun is out and it's quite nice here.</p>
   <p>Should you STAY a while, or go EAST and check out the cave you heard of earlier instead?</p>
 
-  <form ng-submit="getGif(choice, $event)">
+  <form ng-submit="getGif(choice, $event)" name="input">
     <label class="prompt">  >>$ </label>
     <input type="text"
             ng-model="choice"
             name="usr_choice"
             class="input"
+            ng-pattern="inputs.west"
             placeholder="East/Stay">
     </input>
   </form>
+  <p class="warning" ng-show="input.usr_choice.$error.pattern" style="color:red">Please choose one of the options listed above (lower case).</p>
 </div>

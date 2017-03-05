@@ -1,5 +1,6 @@
 <!-- Tell -->
-  <section class="content">
+<div class="content">
+  <section>
     <h2>Alien Encounter!</h2>
     <em class="pts"> +7 points </em>
     <img ng-src="{{tempGif}}"
@@ -8,12 +9,15 @@
     <p>He invites you to grab a coffee or beer with him to share alien experiences. Which do you choose–COFFEE or BEER?</p>
   </section>
 
-  <form ng-submit="getGif(choice, $event)">
+  <form ng-submit="getGif(choice, $event)" name="input">
     <label class="prompt">  >>$ </label>
     <input type="text"
            ng-model="choice"
            name="usr_choice"
            class="input"
+           ng-pattern="inputs.tell"
            placeholder="Beer/Coffee">
     </input>
   </form>
+  <p class="warning" ng-show="input.usr_choice.$error.pattern" style="color:red">Please choose one of the options listed above (lower case).</p>
+</div>

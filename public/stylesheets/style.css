@@ -83,6 +83,10 @@ button {
   padding: 2% 0;
 }
 
+.warning {
+  font-size: .8em;
+}
+
 a:link {
   text-decoration: none;
 }

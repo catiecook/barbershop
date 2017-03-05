@@ -1,19 +1,20 @@
 <!-- FIND -->
   <div class="content">
-
     <h3> You're a good person! </h3>
       <img src="{{tempGif}}"
            alt="story image">
     <p>You decided to try to find the treasure's owner. As you're walking around town, you get a phone call from someone saying that they are the ones who lost the treasure, and can identify many of the items in it. They want to meet up and give you a gift for your kindness in returning their treasure.</p>
     <p>Do you TRUST this human, or do you think you should just PAWN it instead, and not deal with it anymore?</p>
 
-    <form ng-submit="getGif(choice, $event)">
+    <form ng-submit="getGif(choice, $event)" name="input">
       <label class="prompt">  >>$ </label>
       <input type="text"
              ng-model="choice"
              name="usr_choice"
              class="input"
+             ng-pattern="inputs.find"
              placeholder="Trust/Pawn">
       </input>
     </form>
+    <p class="warning" ng-show="input.usr_choice.$error.pattern" style="color:red">Please choose one of the options listed above (lower case).</p>
   </div>

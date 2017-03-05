@@ -6,13 +6,15 @@
            alt="story image">
       <p>The treasure looks like it may have belonged to someone.</p>
       <p>It's a pretty big chest full of jewels and other goods. Do you go NORTH towards town to figure out what to do with the treasure, or do you want to leave it here and go look down those STAIRS you saw before?</p>
-    <form ng-submit="getGif(choice, $event)">
+    <form ng-submit="getGif(choice, $event)" name="input">
       <label class="prompt">  >>$ </label>
       <input type="text"
              ng-model="choice"
              name="usr_choice"
              class="input"
+             ng-pattern="inputs.shiny"
              placeholder="North/Stairs">
       </input>
     </form>
+    <p class="warning" ng-show="input.usr_choice.$error.pattern" style="color:red">Please choose one of the options listed above (lower case).</p>
   </div>

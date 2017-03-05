@@ -6,13 +6,15 @@
            alt="story image">
     <p>It seems that there is a spaceship down here! How the heck?!</p>
     <p>Do you want to board the SPACESHIP and see what's in there, or retreat and go back up and collect the SHINY object you saw before?</p>
-    <form ng-submit="getGif(choice, $event)">
+    <form ng-submit="getGif(choice, $event)" name="input">
       <label class="prompt">  >>$ </label>
       <input type="text"
              ng-model="choice"
              name="usr_choice"
              class="input"
+             ng-pattern="inputs.stairs"
              placeholder="Shiny/Spaceship">
       </input>
     </form>
+    <p class="warning" ng-show="input.usr_choice.$error.pattern" style="color:red">Please choose one of the options listed above (lower case).</p>
   </div>

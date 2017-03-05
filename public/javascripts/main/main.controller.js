@@ -10,6 +10,28 @@ angular.module('gif')
     $scope.points = 0;
     let count = 0;
     $scope.template = "";
+    $scope.inputs = {
+      pbt: /\b(puppy|boulder|tree)\b/,
+      boulder: /\b(west|eat)\b/,
+      east: /\b(shiny|stairs)\b/,
+      find: /\b(trust|pawn)\b/,
+      pbt: /\b(puppy|boulder|tree)\b/,
+      yn: /\b(yes|no)\b/,
+      keep: /\b(west|free)\b/,
+      north: /\b(pawn|find)\b/,
+      pawn: /\b(beer|coffee)\b/,
+      puppy: /\b(keep|leave)\b/,
+      run: /\b(town|tell)\b/,
+      shiny: /\b(north|stairs)\b/,
+      spaceship: /\b(space|run)\b/,
+      stairs: /\b(shiny|spaceship)\b/,
+      tell: /\b(beer|coffee)\b/,
+      town: /\b(beer|coffee)\b/,
+      tree: /\b(east|west)\b/,
+      trust: /\b(beer|coffee)\b/,
+      west: /\b(east|stay)\b/,
+    };
+
 
     $scope.start = function(cont) {
       let answer = cont.toLowerCase()
@@ -32,6 +54,7 @@ angular.module('gif')
     };
 
     $scope.getGif = (term, e) => {
+      console.log(term);
       e.preventDefault();
 
       let wordOpts = [

@@ -1,6 +1,5 @@
 <!-- Pawn -->
   <div class="content">
-
     <h3> To the Pawn Shop! </h3>
     </h3>
       <img src="{{tempGif}}"
@@ -8,13 +7,18 @@
     <p>The pawn shop told you There is a lot of valuable stuff in there and he is willing to give you $300 for it! Score!</p>
     <p>You're kind of thirsty, and now that you have come into some money, you decide to treat yourself!. Do you want a BEER or some COFFEE?</p>
 
-    <form ng-submit="getGif(choice, $event)">
+    <form ng-submit="getGif(choice, $event)" name="input">
       <label class="prompt">  >>$ </label>
       <input type="text"
              ng-model="choice"
              name="usr_choice"
              class="input"
+             ng-pattern="inputs.pawn"
              placeholder="Beer/Coffee">
       </input>
     </form>
+    <p class="warning"
+       ng-show="input.usr_choice.$error.pattern"
+       style="color:red">
+      Please choose one of the options listed above (lower case).</p>
   </div>

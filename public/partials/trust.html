@@ -1,19 +1,23 @@
 <!-- Trust -->
-<section class="content">
-  <h2>Good Instincts!</h2>
-  <em class="pts"> +9 points </em>
-    <img ng-src="{{tempGif}}"
-         alt="story image">
-  <p>Turns out this person is trust worthy and is really stoked you returned their treasure. They want to reward you with a gold chain of your choice from the teasure chest!</p>
-  <p>Today was long, you want to treat yourself for your good deed, do you go get COFFEE or BEER to end out your day?</p>
-</section>
+<div class="content">
+  <section>
+    <h2>Good Instincts!</h2>
+    <em class="pts"> +9 points </em>
+      <img ng-src="{{tempGif}}"
+           alt="story image">
+    <p>Turns out this person is trust worthy and is really stoked you returned their treasure. They want to reward you with a gold chain of your choice from the teasure chest!</p>
+    <p>Today was long, you want to treat yourself for your good deed, do you go get COFFEE or BEER to end out your day?</p>
+  </section>
 
-<form ng-submit="getGif(choice, $event)">
-  <label class="prompt">  >>$ </label>
-  <input type="text"
-         ng-model="choice"
-         name="usr_choice"
-         class="input"
-         placeholder="Beer/Coffee">
-  </input>
-</form>
+  <form ng-submit="getGif(choice, $event)" name="input">
+    <label class="prompt">  >>$ </label>
+    <input type="text"
+           ng-model="choice"
+           name="usr_choice"
+           class="input"
+           ng-pattern="inputs.trust"
+           placeholder="Beer/Coffee">
+    </input>
+  </form>
+  <p class="warning" ng-show="input.usr_choice.$error.pattern" style="color:red">Please choose one of the options listed above (lower case).</p>
+</div>

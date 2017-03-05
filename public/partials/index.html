@@ -5,19 +5,19 @@
       <h2>Welcome to Cavernous Gif!</h2>
       <p> Ready to play? </p>
 
-        <form ng-submit="start(ans)">
+        <form ng-submit="start(ans)" name="input">
           <label class="prompt"> >>$ </label>
           <input type="text"
                  ng-model="ans"
                  name="answer"
-                 class="md-input input "
+                 class="md-input input"
                  md-autofocus
+                 ng-pattern="inputs.yn"
                  placeholder="Yes/No...">
           </input>
         </form>
-
+        <p class="warning" ng-show="input.usr_choice.$error.pattern" style="color:red">Please choose yes or no (lower case).</p>
     </div>
-
     <!-- pull in the correct template -->
     <div ng-include="template"></div>
   </div>

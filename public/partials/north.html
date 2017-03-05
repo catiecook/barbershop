@@ -1,19 +1,22 @@
 <!-- North -->
   <div class="content">
-
     <h3> To Town! </h3>
-      <em> +10 pts </em>
-      <img src="{{tempGif}}"
-           alt="story image">
+    <em> +10 pts </em>
+    <img src="{{tempGif}}"
+         alt="story image">
     <p>You post a craigslist ad about the treasure, but noone responds. Do you want to PAWN the treasure, or keep it and continue to try and FIND the owner?</p>
 
-    <form ng-submit="getGif(choice, $event)">
+    <form ng-submit="getGif(choice, $event)" name="input">
       <label class="prompt">  >>$ </label>
       <input type="text"
              ng-model="choice"
              name="usr_choice"
              class="input"
+             ng-pattern="inputs.north"
              placeholder="Pawn/Find">
       </input>
     </form>
+    <p class="warning"
+       ng-show="input.usr_choice.$error.pattern" 
+       style="color:red">Please choose one of the options listed above (lower case).</p>
   </div>

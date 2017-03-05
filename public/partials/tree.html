@@ -1,20 +1,24 @@
 <!-- Tree -->
-<section class="content">
-  <h2>You chose to make a walking stick</h2>
-  <em class="pts"> +3 points </em>
-  <img ng-src="{{tempGif}}"
-       alt="story image">
-  <p>...Someone's adventurous!</p>
-  <p>After you make a proper walking stick, you wander around and start to hear sounds indicating that there's a river nearby. Probably a mile to the west. Earlier, you also heard that there's a cave the same distance to the east.</p>
-  <p> Do you walk WEST to the river, or EAST to the cave?</p>
-</section>
+<div class="content">
+  <section class="content">
+    <h2>You chose to make a walking stick</h2>
+    <em class="pts"> +3 points </em>
+    <img ng-src="{{tempGif}}"
+         alt="story image">
+    <p>...Someone's adventurous!</p>
+    <p>After you make a proper walking stick, you wander around and start to hear sounds indicating that there's a river nearby. Probably a mile to the west. Earlier, you also heard that there's a cave the same distance to the east.</p>
+    <p> Do you walk WEST to the river, or EAST to the cave?</p>
+  </section>
 
-<form ng-submit="getGif(choice, $event)">
-  <label class="prompt">  >>$ </label>
-  <input type="text"
-         ng-model="choice"
-         name="usr_choice"
-         class="input"
-         placeholder="East/West">
-  </input>
-</form>
+  <form ng-submit="getGif(choice, $event)" name="input">
+    <label class="prompt">  >>$ </label>
+    <input type="text"
+           ng-model="choice"
+           name="usr_choice"
+           class="input"
+           ng-pattern="inputs.tree"
+           placeholder="East/West">
+    </input>
+  </form>
+  <p class="warning" ng-show="input.usr_choice.$error.pattern" style="color:red">Please choose one of the options listed above (lower case).</p>
+</div>

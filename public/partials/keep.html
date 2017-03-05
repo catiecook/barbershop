@@ -5,13 +5,17 @@
          alt="story image">
     <p>The puppy randomly starts running to the west.</p>
     <p>Do you follow him WEST, or do you let him run FREE?</p>
-  <form ng-submit="getGif(choice, $event)">
+  <form ng-submit="getGif(choice, $event)" name="input">
     <label class="prompt">  >>$ </label>
     <input type="text"
            ng-model="choice"
            name="usr_choice"
            class="input"
+           ng-pattern="inputs.keep"
            placeholder="West/Free">
     </input>
   </form>
+  <p class="warning"
+     ng-show="input.usr_choice.$error.pattern"
+     style="color:red">Please choose one of the options listed above (lower case).</p>
 </div>
